@@ -42,7 +42,10 @@
   <div class="hero-text">
     <h1>كل احتياجاتك اليومية… توصلك</h1>
     <p>تطبيق خربز يوفر لك كل شيء تحتاجه بسرعة وسهولة من مكانك</p>
-    <a id="downloadBtn" class="btn disabled" href="https://opdy.io/khurbas"> حمّل الآن <span id="timer">48:00:00</span></a>
+    <a id="downloadBtn" class="btn disabled" href="https://opdy.io/Khurbas"> 
+  حمّل الآن
+  <span id="timer"></span>
+</a>
   </div>
 
   <div class="phone">
@@ -206,36 +209,68 @@
 
 <script>
 
-let seconds = 60; // ساعات
-
 const btn = document.getElementById("downloadBtn");
 const timer = document.getElementById("timer");
 
-/* تأكيد أنه مقفل بالبداية */
-btn.classList.add("disabled");
+// وقت فتح الزر (السعودية)
+const openHour = 18;
+const openMinute = 0;
 
-const interval = setInterval(() => {
+function updateSaudiTimer() {
 
-  let h = Math.floor(seconds / 3600);
-  let m = Math.floor((seconds % 3600) / 60);
-  let s = seconds % 60;
+  const now = new Date();
 
-  timer.textContent =
-    String(h).padStart(2, '0') + ":" +
-    String(m).padStart(2, '0') + ":" +
-    String(s).padStart(2, '0');
+  // توقيت السعودية
+  const saudiNow = new Date(
+    now.toLocaleString("en-US", {
+      timeZone: "Asia/Riyadh"
+    })
+  );
 
-  seconds--;
+  const currentHours = saudiNow.getHours();
+  const currentMinutes = saudiNow.getMinutes();
+  const currentSeconds = saudiNow.getSeconds();
 
-  if (seconds < 0) {
-    clearInterval(interval);
+  // الوقت الحالي بالثواني
+  const currentTime =
+    currentHours * 3600 +
+    currentMinutes * 60 +
+    currentSeconds;
 
-    timer.textContent = "✔";
+  // وقت الفتح بالثواني
+  const openTime =
+    openHour * 3600 +
+    openMinute * 60;
+
+  // إذا فتح
+  if (currentTime >= openTime) {
 
     btn.classList.remove("disabled");
-  }
+    btn.href = "https://opdy.io/khurbas";
 
-}, 1000);
+    timer.innerHTML = "✔";
+
+  } else {
+
+    btn.classList.add("disabled");
+    btn.href = "#";
+
+    const remaining = openTime - currentTime;
+
+    const hrs = Math.floor(remaining / 3600);
+    const mins = Math.floor((remaining % 3600) / 60);
+    const secs = remaining % 60;
+
+    timer.innerHTML =
+      `${String(hrs).padStart(2, '0')}:` +
+      `${String(mins).padStart(2, '0')}:` +
+      `${String(secs).padStart(2, '0')}`;
+  }
+}
+
+updateSaudiTimer();
+
+setInterval(updateSaudiTimer, 1000);
 
 </script>
 
@@ -259,7 +294,7 @@ window.addEventListener("scroll", function () {
 
 <script>
 
-let ctaSeconds = 10;
+let ctaSeconds = 52400;
 
 const ctaBtn = document.getElementById("ctaBtn");
 

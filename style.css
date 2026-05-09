@@ -186,6 +186,11 @@ overflow: hidden;
   display: inline-block;
 }
 
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 /* 📱 صورة الجوال (تعديل مهم جدًا) */
 .phone img {
   width: 260px;
