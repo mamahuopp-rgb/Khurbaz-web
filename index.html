@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>خربز | Khurbaz</title>
+<title>خربز | توصيل طلبات وماركت سحابي في نجران</title>
 
 <!-- Favicons -->
 
@@ -13,6 +13,15 @@
 <link rel="apple-touch-icon" sizes="180x180" href="iphone.png">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#1e7f63">
+<meta name="description" content="خربز تطبيق توصيل وماركت سحابي في نجران يوفر طلباتك اليومية بسرعة وسهولة مع تجربة تسوق ذكية وسريعة">
+
+<!--Open Graph-->
+<meta property="og:title" content="خربز | Khurbaz">
+<meta property="og:description" content="ماركت سحابي يوفر احتياجاتك اليومية بسرعة وسهولة">
+<meta property="og:image" content="https://khurbaz.com/logo.png">
+<meta property="og:type" content="website">
+
 </head>
 
 <body>
@@ -31,7 +40,7 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="hero">
+<header class="hero" id="hero">
 
    <div class="bubbles">
   <span></span>
@@ -42,9 +51,8 @@
   <div class="hero-text">
     <h1>كل احتياجاتك اليومية… توصلك</h1>
     <p>تطبيق خربز يوفر لك كل شيء تحتاجه بسرعة وسهولة من مكانك</p>
-    <a id="downloadBtn" class="btn disabled" href="https://opdy.io/Khurbas"> 
-  حمّل الآن
-  <span id="timer"></span>
+    <a class="btn" href="https://opdy.io/Khurbas">
+  حمّل الآن ✔
 </a>
   </div>
 
@@ -52,7 +60,7 @@
     <img src="screen.png" alt="app screen">
   </div>
 
-</section>
+</header>
 
 <!-- WAVE -->
 <div class="wave-divider">
@@ -64,6 +72,8 @@
 </div>
 
 <!-- STATS -->
+ <main>
+
 <section class="stats">
   <div class="stat"><h2>+30</h2><p>دقيقة متوسط توصيل</p></div>
   <div class="stat"><h2>+2500</h2><p>مستخدم نشط</p></div>
@@ -74,9 +84,19 @@
 <!-- ABOUT -->
 <section class="section" id="section">
   <h2>وش هو خربز؟</h2>
-  <p>خربز هو ماركت سحابي يسهّل عليك طلب احتياجاتك اليومية بسرعة وسهولة في مكان واحد بدون تعقيد.
-خربز .. دايم واصل
-تجربة تسوق ذكية وسريعة توصل لك طلباتك بأبسط طريقة وتوفر وقتك وجهدك</p>
+
+  <p class="desc">
+    تطبيق خربز هو ماركت سحابي يسهّل عليك طلب احتياجاتك اليومية بسرعة وسهولة،
+    في مكان واحد بدون تعقيد، لتجربة تسوق رائعة داخل نجران
+  </p>
+
+  <p class="slogan">
+    <strong>خربز… دايم واصل</strong>
+  </p>
+
+  <p class="tagline">
+   تسوّق بذكاء، وخلك دائمًا سابق بخطوة.
+  </p>
 </section>
 
 <!-- FEATURES -->
@@ -97,15 +117,15 @@
   <div class="features">
 
     <div class="card"><div class="step-icon">
-  <img src="11.png" alt="">
+  <img src="11.png" alt="اختيار المنتج">
 </div><p>اختر المنتج</p></div>
 
     <div class="card"><div class="step-icon">
-  <img src="22.png" alt="">
+  <img src="22.png" alt="تأكيد الطلب">
 </div><p>أكد الطلب</p></div>
 
     <div class="card"><div class="step-icon">
-  <img src="33.png" alt="">
+  <img src="33.png" alt="توصيل سريع">
 </div><p>يوصلك بسرعة</p></div>
   
 </div>
@@ -121,11 +141,11 @@
     حمّل التطبيق
 
   <a
-  id="ctaBtn"
-  class="cat1 disabled"
+  class="cat1"
   href="https://opdy.io/Khurbas"> خربز</a> وابدأ تجربتك الآن</p>
 
 </section>
+ </main>
 
 <!-- FOOTER-->
 
@@ -168,112 +188,6 @@
 
 </footer>
 
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-
-<script>
-
-const btn = document.getElementById("downloadBtn");
-const timer = document.getElementById("timer");
-
-// وقت فتح الزر (السعودية)
-const openHour = 21;
-const openMinute = 0;
-
-function updateSaudiTimer() {
-
-  const now = new Date();
-
-  // توقيت السعودية
-  const saudiNow = new Date(
-    now.toLocaleString("en-US", {
-      timeZone: "Asia/Riyadh"
-    })
-  );
-
-  const currentHours = saudiNow.getHours();
-  const currentMinutes = saudiNow.getMinutes();
-  const currentSeconds = saudiNow.getSeconds();
-
-  // الوقت الحالي بالثواني
-  const currentTime =
-    currentHours * 3600 +
-    currentMinutes * 60 +
-    currentSeconds;
-
-  // وقت الفتح بالثواني
-  const openTime =
-    openHour * 3600 +
-    openMinute * 60;
-
-  // إذا فتح
-  if (currentTime >= openTime) {
-
-    btn.classList.remove("disabled");
-    btn.href = "https://opdy.io/Khurbas";
-
-    timer.innerHTML = "✔";
-
-  } else {
-
-    btn.classList.add("disabled");
-    btn.href = "#";
-
-    const remaining = openTime - currentTime;
-
-    const hrs = Math.floor(remaining / 3600);
-    const mins = Math.floor((remaining % 3600) / 60);
-    const secs = remaining % 60;
-
-    timer.innerHTML =
-      `${String(hrs).padStart(2, '0')}:` +
-      `${String(mins).padStart(2, '0')}:` +
-      `${String(secs).padStart(2, '0')}`;
-  }
-}
-
-updateSaudiTimer();
-
-setInterval(updateSaudiTimer, 1000);
-
-</script>
-
 <script>
 
 window.addEventListener("scroll", function () {
@@ -287,31 +201,6 @@ window.addEventListener("scroll", function () {
   }
 
 });
-
-</script>
-
-<!-- عداد كلمة خربز بالاسفل-->
-
-<script>
-
-let ctaSeconds = 5;
-
-const ctaBtn = document.getElementById("ctaBtn");
-
-ctaBtn.classList.add("disabled");
-
-const ctaInterval = setInterval(() => {
-
-  ctaSeconds--;
-
-  if (ctaSeconds < 0) {
-
-    clearInterval(ctaInterval);
-
-    ctaBtn.classList.remove("disabled");
-  }
-
-}, 1000);
 
 </script>
 
